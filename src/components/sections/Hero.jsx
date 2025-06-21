@@ -70,16 +70,31 @@ const Hero = ({ children }) => {
             className="flex flex-col items-center gap-3"
           >
             <LightSweep>
-              <h1 className="text-4xl sm:text-5xl md:text-6xl font-sora font-extrabold text-white">
+              <motion.h1
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.6, ease: 'easeOut' }}
+                className="text-4xl sm:text-5xl md:text-6xl font-bold text-slate-50 tracking-tighter"
+              >
                 Prasanna Aditya P
-              </h1>
+              </motion.h1>
             </LightSweep>
-            <h2 className="text-xl sm:text-2xl md:text-3xl font-sora font-semibold text-cyan-300 mt-2">
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.7, ease: 'easeOut' }}
+              className="text-xl md:text-2xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-indigo-500 mt-2"
+            >
               AI/ML Architect • Full-Stack Engineer
-            </h2>
-            <p className="text-lg sm:text-xl text-slate-300 max-w-3xl mt-4">
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.8, ease: 'easeOut' }}
+              className="mt-6 max-w-2xl text-base text-slate-300 leading-relaxed"
+            >
               Innovating at the intersection of AI, Engineering, and the Physical World to build intelligent and impactful solutions.
-            </p>
+            </motion.p>
           </motion.div>
 
           {/* Action Buttons */}

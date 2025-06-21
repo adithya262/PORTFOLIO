@@ -48,13 +48,13 @@ const Timeline = () => {
           initial={{ opacity: 0, y: 32 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
-          className="text-4xl md:text-5xl font-extrabold font-lexend text-center mb-20 bg-gradient-to-r from-slate-300 to-slate-100 bg-clip-text text-transparent select-none"
+          className="text-3xl md:text-4xl font-extrabold font-lexend text-center mb-16 bg-gradient-to-r from-slate-300 to-slate-100 bg-clip-text text-transparent select-none"
           style={{ WebkitBackgroundClip: 'text', backgroundClip: 'text', WebkitTextFillColor: 'transparent' }}
         >
           Experience
         </motion.h2>
-        <div className="relative wrap overflow-visible p-10 h-full flex flex-col items-center">
-          <div className="border-l-4 border-white/5 absolute left-1/2 top-0 h-full transform -translate-x-1/2 z-0" style={{ width: '4px', background: 'none' }}></div>
+        <div className="relative wrap overflow-visible p-8 h-full flex flex-col items-center">
+          <div className="border-l-2 border-white/5 absolute left-1/2 top-0 h-full transform -translate-x-1/2 z-0"></div>
           {timelineEvents.map((event, index) => (
             <TimelineItem key={index} event={event} index={index} />
           ))}
@@ -111,23 +111,23 @@ const TimelineItem = ({ event, index }) => {
     >
       <div className="order-1 w-5/12"></div>
       <motion.div
-        className="z-20 flex items-center justify-center order-1 bg-transparent w-12 h-12 rounded-full border-2 border-white/10 shadow-sm"
+        className="z-20 flex items-center justify-center order-1 bg-transparent w-10 h-10 rounded-full border-2 border-white/10 shadow-sm"
         variants={nodeVariants}
         initial="initial"
         animate={inView ? "inView" : "initial"}
       >
-        {Icon && <Icon className="w-6 h-6 text-cyan-400" strokeWidth={2.2} />}
+        {Icon && <Icon className="w-5 h-5 text-cyan-400" strokeWidth={2.2} />}
       </motion.div>
       <motion.div
-        className="order-1 w-5/12 px-6 py-6 rounded-2xl bg-white/5 backdrop-blur-md border-l-4 border-cyan-400/40 shadow-lg transition-all duration-200 hover:-translate-y-1 hover:shadow-xl hover:border-cyan-400/60"
+        className="order-1 w-5/12 px-5 py-5 rounded-xl bg-white/5 backdrop-blur-md border-l-4 border-cyan-400/40 shadow-lg transition-all duration-200 hover:-translate-y-1 hover:shadow-xl hover:border-cyan-400/60"
         whileHover={{ boxShadow: '0 8px 32px rgba(34,211,238,0.2)', borderColor: 'rgba(34,211,238,0.6)' }}
       >
-        <h3 className="mb-2 font-bold text-cyan-400 text-lg font-sora">{event.year}</h3>
-        <h4 className="mb-2 font-semibold text-white text-xl font-sora">{event.title} <span className="font-normal text-cyan-300">at {event.company}</span></h4>
-        <p className="text-base leading-snug tracking-wide text-white/80 mb-2">{event.description}</p>
+        <h3 className="mb-1 font-bold text-cyan-400 text-base font-sora">{event.year}</h3>
+        <h4 className="mb-2 font-semibold text-white text-lg font-sora">{event.title} <span className="font-normal text-cyan-300/90 text-base">at {event.company}</span></h4>
+        <p className="text-sm leading-snug tracking-wide text-white/80 mb-2">{event.description}</p>
         <button
           onClick={() => setIsExpanded(!isExpanded)}
-          className="mt-2 px-4 py-2 rounded-lg bg-cyan-400/10 text-cyan-300 hover:bg-cyan-400/20 hover:text-white transition-all duration-200 text-sm font-semibold focus:outline-none"
+          className="mt-2 px-3 py-1.5 rounded-md bg-cyan-400/10 text-cyan-300 hover:bg-cyan-400/20 hover:text-white transition-all duration-200 text-xs font-semibold focus:outline-none"
         >
           {isExpanded ? 'View Less ▲' : 'View Details ▼'}
         </button>
@@ -135,9 +135,9 @@ const TimelineItem = ({ event, index }) => {
           initial={{ opacity: 0, height: 0 }}
           animate={isExpanded ? { opacity: 1, height: "auto" } : { opacity: 0, height: 0 }}
           transition={{ duration: 0.3, ease: "easeOut" }}
-          className="overflow-hidden mt-4 bg-white/10 p-4 rounded-md border border-cyan-400/10"
+          className="overflow-hidden mt-3 bg-white/10 p-3 rounded-md border border-cyan-400/10"
         >
-          <p className="text-white/90 text-base leading-relaxed whitespace-pre-wrap">
+          <p className="text-white/90 text-sm leading-relaxed whitespace-pre-wrap">
             {event.details}
           </p>
         </motion.div>

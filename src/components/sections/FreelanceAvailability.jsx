@@ -38,9 +38,12 @@ const FreelanceAvailability = () => {
         boxShadow: `0 0 10px rgba(0, 246, 255, 0.3)` // Subtle glow by default
       }}
     >
-      <h3 className="text-2xl font-sora font-bold mb-4 flex items-center gap-2 mt-0">
-        <Lightbulb className="text-neon-yellow" size={28} /> What do you need help with?
-      </h3>
+      <div className="flex justify-between items-center mb-4">
+        <h3 className="text-xl font-sora font-bold text-white flex items-center">
+          <Lightbulb size={22} className="mr-3 text-neon-yellow" />
+          What do you need help with?
+        </h3>
+      </div>
       
       {/* Toggle Switch between Full Stack and AI Model */}
       <div className="flex justify-center mb-6">

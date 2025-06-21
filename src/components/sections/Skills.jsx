@@ -144,19 +144,19 @@ const Skills = () => {
       viewport={{ once: true, amount: 0.3 }}
     >
       {/* Title and Description */}
-      <div className="text-center mb-12">
-        <h2 className="text-4xl font-sora mb-4 text-white">
+      <div className="text-center mb-10">
+        <h2 className="text-3xl font-sora font-bold mb-3 text-white">
           Skills & Expertise
         </h2>
-        <p className="text-lg text-gray-400 max-w-2xl mx-auto">
+        <p className="text-base text-gray-400 max-w-2xl mx-auto">
           A comprehensive collection of technologies and tools I've mastered through years of experience
         </p>
       </div>
 
       {/* Marquee Container */}
-      <div className="relative w-full overflow-hidden whitespace-nowrap py-8 border-t border-b border-gray-700/50 h-48 flex items-center">
+      <div className="relative w-full overflow-hidden whitespace-nowrap py-4 border-t border-b border-gray-700/50 h-32 flex items-center">
         <motion.div 
-          className="inline-block animate-marquee-slow flex items-center space-x-12 h-full"
+          className="inline-block animate-marquee-slow flex items-center space-x-8 h-full"
         >
           {duplicatedSkills.map((skill, index) => {
             const IconComponent = skill.icon;
@@ -168,23 +168,23 @@ const Skills = () => {
                 className="flex-shrink-0 relative"
                 onHoverStart={() => setHoveredSkill(skill)}
                 onHoverEnd={() => setHoveredSkill(null)}
-                initial={{ width: 64, height: 64 }} // w-16 h-16 (64px) for icon state
+                initial={{ width: 48, height: 48 }} // w-12 h-12
                 animate={{
-                  width: hoveredSkill?.name === skill.name ? 160 : 64, // w-40 h-40 (160px) for expanded
-                  height: hoveredSkill?.name === skill.name ? 160 : 64,
-                  boxShadow: hoveredSkill?.name === skill.name ? `0 0 20px ${glowColor}` : `0 0 8px ${getGlowColor(skill.color).replace('0.7)', '0.3)')}`, // Subtle glow by default, stronger on hover
+                  width: hoveredSkill?.name === skill.name ? 128 : 48, // w-32 h-32
+                  height: hoveredSkill?.name === skill.name ? 128 : 48,
+                  boxShadow: hoveredSkill?.name === skill.name ? `0 0 16px ${glowColor}` : `0 0 4px ${getGlowColor(skill.color).replace('0.7)', '0.3)')}`,
                 }}
                 transition={{ duration: 0.3 }}
                 style={{
-                  borderRadius: '0.75rem', // rounded-xl
-                  background: 'rgba(29, 32, 38, 0.15)', // More transparent background
-                  backdropFilter: 'blur(4px)', // backdrop-blur-sm
-                  border: '1px solid rgba(107, 114, 128, 0.5)', // border border-gray-700/50
+                  borderRadius: '0.65rem',
+                  background: 'rgba(29, 32, 38, 0.15)',
+                  backdropFilter: 'blur(4px)',
+                  border: '1px solid rgba(107, 114, 128, 0.5)',
                   display: 'flex',
                   flexDirection: 'column',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  padding: '1rem', // p-4
+                  padding: '0.5rem', // p-2
                   cursor: 'pointer',
                   overflow: 'hidden',
                 }}
@@ -200,12 +200,12 @@ const Skills = () => {
                       exit={{ opacity: 0 }}
                       transition={{ duration: 0.2 }}
                     >
-                      <span className="text-neon-cyan font-medium mb-1 text-base text-center leading-tight">{skill.name}</span>
-                      <span className="text-xs text-gray-400 mb-2 text-center leading-tight">{skill.category}</span>
-                      <div className="text-xs text-gray-300 mb-1">
+                      <span className="text-neon-cyan font-medium mb-0.5 text-xs text-center leading-tight">{skill.name}</span>
+                      <span className="text-[10px] text-gray-400 mb-1.5 text-center leading-tight">{skill.category}</span>
+                      <div className="text-[10px] text-gray-300 mb-1">
                         Proficiency: {skill.proficiency}%
                       </div>
-                      <div className="w-full h-1 bg-gray-700/50 rounded-full overflow-hidden px-2">
+                      <div className="w-full h-0.5 bg-gray-700/50 rounded-full overflow-hidden px-1">
                         <motion.div
                           className="h-full bg-neon-cyan"
                           initial={{ width: 0 }}
@@ -226,7 +226,7 @@ const Skills = () => {
                     >
                       {IconComponent && (
                         <IconComponent
-                          className={`text-4xl text-${skill.color}`}
+                          className={`text-2xl text-${skill.color}`}
                         />
                       )}
                     </motion.div>
@@ -241,4 +241,4 @@ const Skills = () => {
   );
 };
 
-export default Skills; 
+export default Skills;

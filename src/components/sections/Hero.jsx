@@ -52,7 +52,7 @@ const Hero = ({ children }) => {
               rotateX,
               rotateY
             }}
-            className="w-52 h-52 rounded-full overflow-hidden border-4 border-neon-cyan/30 shadow-xl shadow-neon-cyan/20"
+            className="w-28 h-28 md:w-36 md:h-36 rounded-full overflow-hidden border-4 border-neon-cyan/30 shadow-xl shadow-neon-cyan/20"
           >
             <img 
               src={avatar} 
@@ -74,7 +74,7 @@ const Hero = ({ children }) => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.6, ease: 'easeOut' }}
-                className="text-4xl sm:text-5xl md:text-6xl font-bold text-slate-50 tracking-tighter"
+                className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-50 tracking-tighter"
               >
                 Prasanna Aditya P
               </motion.h1>
@@ -83,7 +83,7 @@ const Hero = ({ children }) => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.7, ease: 'easeOut' }}
-              className="text-xl md:text-2xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-indigo-500 mt-2"
+              className="text-lg md:text-xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-indigo-500 mt-2"
             >
               AI/ML Architect • Full-Stack Engineer
             </motion.h2>
@@ -91,7 +91,7 @@ const Hero = ({ children }) => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.8, ease: 'easeOut' }}
-              className="mt-6 max-w-2xl text-base text-slate-300 leading-relaxed"
+              className="mt-5 max-w-xl text-sm text-slate-300 leading-relaxed"
             >
               Innovating at the intersection of AI, Engineering, and the Physical World to build intelligent and impactful solutions.
             </motion.p>
@@ -106,18 +106,16 @@ const Hero = ({ children }) => {
           >
             <motion.a
               href="#projects"
-              className="flex items-center gap-2 btn-secondary neon-glow-btn px-8 py-4 rounded-lg border border-neon-cyan/60 bg-dark-accent/60 text-white font-semibold shadow-md hover:bg-neon-cyan/10 hover:text-neon-cyan transition-all duration-200 focus:ring-2 focus:ring-cyan-400/40 focus:outline-none text-lg"
-              whileHover={{ scale: 1.05, boxShadow: '0 0 20px 4px #00f6ff55' }}
+              className="px-5 py-2.5 rounded-md text-sm font-medium text-white bg-cyan-600 hover:bg-cyan-700 transition-all duration-300 shadow-lg flex items-center justify-center gap-2"
+              whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
               View Projects <ArrowRight size={20} />
             </motion.a>
             <motion.a
               href="/resume.pdf"
-              download
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 btn-secondary neon-glow-btn px-8 py-4 rounded-lg border border-transparent bg-transparent text-slate-300 font-semibold hover:text-neon-cyan transition-all duration-200 text-lg"
+              download="Prasanna_Aditya_Resume.pdf"
+              className="px-5 py-2.5 rounded-md text-sm font-medium text-cyan-200 bg-slate-800/50 border border-slate-700 hover:bg-slate-700/50 transition-all duration-300 shadow-lg flex items-center justify-center gap-2"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >

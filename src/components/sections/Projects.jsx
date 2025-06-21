@@ -123,7 +123,7 @@ const Projects = () => {
           initial={{ opacity: 0, y: 32, backgroundPosition: '0% 50%' }}
           animate={{ opacity: 1, y: 0, backgroundPosition: '100% 50%' }}
           transition={{ duration: 0.9, ease: 'easeOut', backgroundPosition: { duration: 3, repeat: Infinity, repeatType: 'reverse', ease: 'linear' } }}
-          className="text-4xl md:text-5xl font-lexend font-extrabold text-center bg-gradient-to-r from-slate-300 to-slate-100 bg-clip-text text-transparent select-none"
+          className="text-3xl md:text-4xl font-lexend font-extrabold text-center bg-gradient-to-r from-slate-300 to-slate-100 bg-clip-text text-transparent select-none"
           style={{ WebkitBackgroundClip: 'text', backgroundClip: 'text', WebkitTextFillColor: 'transparent' }}
         >
           Projects
@@ -174,7 +174,7 @@ const Projects = () => {
               <div className="w-full h-full flex flex-col justify-center items-center relative z-20">
                 {/* Project Icon with Pulse */}
                 <motion.div
-                  className="text-5xl mb-4 select-none"
+                  className="text-4xl mb-3 select-none"
                   whileHover={{ scale: 1.12, filter: 'brightness(1.1)' }}
                   animate={{
                     scale: [1, 1.06, 1],
@@ -198,30 +198,30 @@ const Projects = () => {
                       transition={{ duration: 0.25 }}
                       className="flex-1 flex flex-col justify-center items-center w-full"
                     >
-                      <p className="text-gray-200 text-base leading-relaxed mb-6 text-center max-w-xs">
+                      <p className="text-gray-200 text-sm leading-relaxed mb-4 text-center max-w-xs px-2">
                         {project.description}
                       </p>
-                      <div className="flex gap-4 justify-center mb-4">
+                      <div className="flex gap-3 justify-center mb-3">
                         <a
                           href={project.liveLink}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="btn-primary text-base flex items-center gap-2"
+                          className="btn-primary text-sm flex items-center gap-1.5 px-3 py-1.5"
                           onClick={e => e.stopPropagation()}
                         >
-                          View Project <ExternalLink size={18} />
+                          View <ExternalLink size={16} />
                         </a>
                         <a
                           href={project.githubLink}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="btn-secondary text-base flex items-center gap-2"
+                          className="btn-secondary text-sm flex items-center gap-1.5 px-3 py-1.5"
                           onClick={e => e.stopPropagation()}
                         >
-                          GitHub <Github size={18} />
+                          GitHub <Github size={16} />
                         </a>
                       </div>
-                      <p className="text-gray-400 text-base text-center">Hover out to return...</p>
+                      <p className="text-gray-400 text-xs text-center">Hover out to return...</p>
                     </motion.div>
                   ) : (
                     <motion.div
@@ -232,14 +232,14 @@ const Projects = () => {
                       transition={{ duration: 0.25 }}
                       className="flex-1 flex flex-col justify-center items-center w-full"
                     >
-                      <h3 className="text-xl font-bold font-sora text-cyan-300 mb-4 leading-tight text-center whitespace-pre-line">
+                      <h3 className="text-lg font-bold font-sora text-cyan-300 mb-3 leading-tight text-center whitespace-pre-line px-2">
                         {project.title}
                       </h3>
-                      <div className="flex flex-wrap justify-center mb-6">
+                      <div className="flex flex-wrap justify-center mb-4 gap-1.5 px-2">
                         {project.technologies.map(tag => (
                           <motion.span
                             key={tag}
-                            className="pill-tag-minimal"
+                            className="pill-tag-minimal text-xs"
                             whileHover={{ scale: 1.12, backgroundColor: 'rgba(0,246,255,0.16)' }}
                             transition={{ duration: 0.2 }}
                           >
@@ -247,7 +247,7 @@ const Projects = () => {
                           </motion.span>
                         ))}
                       </div>
-                      <p className="text-gray-200 text-base text-center">Hover to reveal details...</p>
+                      <p className="text-gray-200 text-sm text-center">Hover to reveal details...</p>
                     </motion.div>
                   )}
                 </AnimatePresence>

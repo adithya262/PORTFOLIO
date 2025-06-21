@@ -74,12 +74,12 @@ const Contact = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
-          className="text-center mb-12"
+          className="text-center mb-10"
         >
-          <h2 className="text-4xl sm:text-5xl font-sora font-extrabold text-white mb-4">
+          <h2 className="text-3xl sm:text-4xl font-sora font-extrabold text-white mb-3">
             Get In Touch
           </h2>
-          <p className="text-lg text-slate-300 max-w-xl mx-auto">
+          <p className="text-base text-slate-300 max-w-xl mx-auto">
             Have a question or a project in mind? I'd love to hear from you.
             Fill out the form below and I'll get back to you as soon as possible.
           </p>
@@ -91,7 +91,7 @@ const Contact = () => {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
-          className="bg-dark-accent/30 p-8 rounded-2xl border border-neon-cyan/20 shadow-xl shadow-black/20 space-y-6"
+          className="bg-dark-accent/30 p-6 rounded-2xl border border-neon-cyan/20 shadow-xl shadow-black/20 space-y-5"
         >
           <motion.input
             type="text"
@@ -100,7 +100,7 @@ const Contact = () => {
             value={formData.name}
             onChange={handleChange}
             required
-            className="w-full p-4 bg-dark-accent/50 rounded-lg border border-slate-700 focus:outline-none text-white transition-all"
+            className="w-full p-3 bg-dark-accent/50 rounded-lg border border-slate-700 focus:outline-none text-white transition-all text-sm"
             variants={inputVariants}
             whileFocus="focus"
           />
@@ -111,7 +111,7 @@ const Contact = () => {
             value={formData.email}
             onChange={handleChange}
             required
-            className="w-full p-4 bg-dark-accent/50 rounded-lg border border-slate-700 focus:outline-none text-white transition-all"
+            className="w-full p-3 bg-dark-accent/50 rounded-lg border border-slate-700 focus:outline-none text-white transition-all text-sm"
             variants={inputVariants}
             whileFocus="focus"
           />
@@ -121,21 +121,21 @@ const Contact = () => {
             value={formData.message}
             onChange={handleChange}
             required
-            rows="6"
-            className="w-full p-4 bg-dark-accent/50 rounded-lg border border-slate-700 focus:outline-none text-white transition-all resize-none"
+            rows="5"
+            className="w-full p-3 bg-dark-accent/50 rounded-lg border border-slate-700 focus:outline-none text-white transition-all resize-none text-sm"
             variants={inputVariants}
             whileFocus="focus"
           />
           <motion.button
             type="submit"
             disabled={isSending}
-            className="w-full flex items-center justify-center gap-4 px-10 py-5 rounded-full font-bold text-xl bg-gradient-to-r from-indigo-700 via-blue-800 to-cyan-900 bg-[length:200%_200%] bg-[position:0%_50%] border-2 border-cyan-400/40 shadow-lg shadow-cyan-400/10 text-white tracking-wide transition-all duration-300 hover:from-indigo-600 hover:to-cyan-700 hover:shadow-cyan-400/30 focus:outline-none focus:ring-2 focus:ring-cyan-400/30 disabled:opacity-50 disabled:cursor-not-allowed relative overflow-hidden"
-            whileHover={{ scale: 1.07, boxShadow: '0 0 32px 4px #00f6ff55', backgroundPosition: '100% 50%' }}
+            className="w-full flex items-center justify-center gap-3 px-8 py-4 rounded-full font-bold text-lg bg-gradient-to-r from-indigo-700 via-blue-800 to-cyan-900 bg-[length:200%_200%] bg-[position:0%_50%] border-2 border-cyan-400/40 shadow-lg shadow-cyan-400/10 text-white tracking-wide transition-all duration-300 hover:from-indigo-600 hover:to-cyan-700 hover:shadow-cyan-400/30 focus:outline-none focus:ring-2 focus:ring-cyan-400/30 disabled:opacity-50 disabled:cursor-not-allowed relative overflow-hidden"
+            whileHover={{ scale: 1.05, boxShadow: '0 0 25px 3px #00f6ff55', backgroundPosition: '100% 50%' }}
             whileTap={{ scale: 0.97 }}
           >
             {isSending ? (
               <>
-                <Loader className="animate-spin" size={28} />
+                <Loader className="animate-spin" size={24} />
                 <span>Sending...</span>
               </>
             ) : (
@@ -143,11 +143,11 @@ const Contact = () => {
                 <span>Send Message</span>
                 <motion.span
                   initial={{ x: 0 }}
-                  whileHover={{ x: 8 }}
+                  whileHover={{ x: 6 }}
                   transition={{ type: 'spring', stiffness: 300, damping: 15 }}
                   className="inline-flex items-center"
                 >
-                  <ArrowRight size={26} className="ml-2" />
+                  <ArrowRight size={22} className="ml-1.5" />
                 </motion.span>
               </>
             )}

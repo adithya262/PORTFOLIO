@@ -93,12 +93,12 @@ function App() {
           
           {/* Main content sections */}
           <Hero>
-            <div className="w-full max-w-7xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-4 items-start">
-              <div className="flex flex-col gap-y-4">
+            <div className="w-full max-w-7xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-4 items-start grid-rows-auto">
+              <div className="flex flex-col gap-y-4 h-full">
                 <Skills />
                 <WhatIfBox className="mt-0"/>
               </div>
-              <div className="flex flex-col gap-y-8">
+              <div className="flex flex-col gap-y-8 h-full">
                 <FreelanceAvailability className="mt-0"/> 
                 <DevCircuitBox className="mt-0"/>
               </div>

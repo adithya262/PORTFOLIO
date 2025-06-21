@@ -5,52 +5,6 @@ import { CarFront, Code, Rocket, Wrench, Flag, GitBranch, PlayCircle } from 'luc
 const DevCircuitBox = () => {
   const [hoveredSector, setHoveredSector] = useState(null);
   const pathRef = useRef(null);
-  const carX = useMotionValue(0);
-  const carY = useMotionValue(0);
-  const carRotation = useMotionValue(0);
-  const progress = useMotionValue(0);
-
-  useEffect(() => {
-    if (!pathRef.current) return;
-
-    const path = pathRef.current;
-    const pathLength = path.getTotalLength();
-    let animationFrame;
-    let startTime = null;
-    const duration = 12000; // 12 seconds per lap
-
-    // Precompute a high-res array of points along the path
-    const resolution = 2000;
-    const points = Array.from({ length: resolution }, (_, i) => {
-      const l = (i / (resolution - 1)) * pathLength;
-      return path.getPointAtLength(l);
-    });
-
-    const animateDot = (currentTime) => {
-      if (!startTime) startTime = currentTime;
-      const elapsed = currentTime - startTime;
-      const currentProgress = (elapsed % duration) / duration;
-      const idx = Math.floor(currentProgress * (resolution - 1));
-      const nextIdx = (idx + 1) % resolution;
-      const point = points[idx];
-      const nextPoint = points[nextIdx];
-      carX.set(point.x);
-      carY.set(point.y);
-      // Calculate angle for rotation
-      const angle = Math.atan2(nextPoint.y - point.y, nextPoint.x - point.x) * 180 / Math.PI;
-      carRotation.set(angle);
-      progress.set(currentProgress);
-      animationFrame = requestAnimationFrame(animateDot);
-    };
-
-    animationFrame = requestAnimationFrame(animateDot);
-
-    return () => {
-      if (animationFrame) {
-        cancelAnimationFrame(animationFrame);
-      }
-    };
-  }, [carX, carY, carRotation, progress]);
 
   const getPointOnPath = (progress) => {
     if (pathRef.current) {
@@ -122,20 +76,6 @@ const DevCircuitBox = () => {
               <stop offset="100%" stopColor="#00F6FF" />
             </linearGradient>
           </defs>
-
-          {/* Car element - animated along the path */}
-          <motion.g
-            className="car-icon"
-            style={{ x: carX, y: carY, rotate: carRotation }}
-          >
-            <motion.circle
-              r="8"
-              fill="#FF0000"
-              style={{
-                filter: "drop-shadow(0 0 8px rgba(255, 0, 0, 0.8))"
-              }}
-            />
-          </motion.g>
 
           {/* Sector Markers */}
           {sectors.map((sector, index) => {

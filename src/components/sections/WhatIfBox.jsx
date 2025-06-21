@@ -56,8 +56,9 @@ const WhatIfBox = () => {
         boxShadow: `0 0 10px rgba(0, 246, 255, 0.3)` // Subtle glow by default
       }}
     >
-      <h3 className="text-2xl font-sora font-bold mb-6 flex items-center gap-2 mt-0">
-        <Lightbulb className="text-neon-cyan" size={28} /> What If I Built It?
+      <h3 className="text-xl font-sora font-bold text-white mb-6 flex items-center">
+        <Lightbulb size={22} className="mr-3 text-neon-pink" />
+        What If I Built It?
       </h3>
       
       <div className="space-y-4 mb-6">
